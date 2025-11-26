@@ -436,7 +436,7 @@ if st.session_state.ocr_results:
     show_logs = st.toggle("ログ詳細を表示する", value=False)
     
     if show_logs:
-        st.info(f"送信されたリクエスト詳細です。1リクエストにつき {IMAGES_PER_GROUP} 枚の画像を含んでいます。")
+        st.info(f"送信されたリクエスト詳細です。1リクエストにつき {IMAGES_PER_GROUP} 枚までの画像を含んでいます。")
         for log in logs:
             group_id = log['group_id']
             files_str = ", ".join(log['files'])
