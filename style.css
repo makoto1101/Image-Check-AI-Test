@@ -1,0 +1,258 @@
+/* style.css */
+
+/* Google Fonts Import*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* === 全体設定 (游ゴシック適用) === */
+.stApp {
+    background-color: #0B1120; /* Deepest Navy */
+    background-image: radial-gradient(circle at 50% 0%, #172554 0%, #0B1120 70%);
+    
+    /* ★ここを変更: 游ゴシック優先のフォントスタック */
+    font-family: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif !important;
+    
+    color: #E2E8F0;
+}
+
+/* Streamlitの各種ウィジェットにもフォントを強制適用 */
+button, input, textarea, select, div[data-baseweb="select"] {
+    font-family: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif !important;
+}
+
+/* === サイドバー === */
+[data-testid="stSidebar"] {
+    background-color: #0F172A;
+    border-right: 1px solid #1E293B;
+}
+
+/* === ヘッダー装飾 === */
+h1 {
+    background: linear-gradient(to right, #38BDF8, #818CF8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 800 !important;
+    letter-spacing: -1px;
+    /* 見出しも游ゴシック */
+    font-family: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif !important;
+}
+
+h2, h3 {
+    color: #F1F5F9 !important;
+    font-weight: 700 !important;
+    font-family: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif !important;
+}
+
+/* === 入力フォーム === */
+.stTextInput > div > div > input {
+    background-color: #1E293B;
+    color: #F8FAFC;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.stTextInput > div > div > input:focus {
+    border-color: #38BDF8;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
+    background-color: #0F172A;
+}
+
+/* === メインボタン (グラデーション & 光るエフェクト) === */
+.stButton > button {
+    background: linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(6, 182, 212, 0.4), 0 4px 6px -2px rgba(6, 182, 212, 0.2);
+    filter: brightness(1.1);
+}
+
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+/* === タブデザイン === */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 8px;
+    background-color: transparent;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 50px;
+    background-color: #1E293B;
+    border-radius: 8px;
+    color: #94A3B8;
+    border: 1px solid #334155;
+    padding: 0 20px;
+    /* タブも游ゴシック */
+    font-family: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif !important;
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: #1E293B !important;
+    color: #38BDF8 !important;
+    border: 1px solid #38BDF8 !important;
+    box-shadow: 0 0 10px rgba(56, 189, 248, 0.1);
+}
+
+/* === データテーブル (DataFrame) === */
+[data-testid="stDataFrame"] {
+    border: 1px solid #334155;
+    border-radius: 8px;
+    overflow: hidden;
+    /* テーブル内も游ゴシック */
+    font-family: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif !important;
+}
+
+/* === Expander (折りたたみ) === */
+.streamlit-expanderHeader {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    color: #E2E8F0;
+    font-family: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif !important;
+}
+
+code {
+    color: #38BDF8;
+    background-color: #0F172A;
+    font-family: 'JetBrains Mono', monospace; /* コードは見やすさ重視で等幅のまま */
+}
+
+/* === Toast (通知) === */
+div[data-baseweb="toast"] {
+    background-color: #1E293B !important;
+    border: 1px solid #334155;
+    color: white;
+    font-family: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif !important;
+}
+
+/* テキスト入力やセレクトボックスの上のラベル文字 */
+.stTextInput label, .stSelectbox label {
+    color: #aaaaaa !important; /* テーマに合わせた明るいシアン */
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.5px;
+}
+
+/* === 追加: OCR結果テーブルのデザイン === */
+.ocr-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+    background-color: #1E293B; /* カード背景色 */
+    border-radius: 8px;
+    overflow: hidden; /* 角丸用 */
+}
+
+.ocr-table th {
+    background-color: #0F172A; /* ヘッダー背景 */
+    color: #38BDF8;            /* ヘッダー文字色(シアン) */
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 2px solid #334155;
+    font-weight: 700;
+    white-space: nowrap; /* ヘッダーは折り返さない */
+}
+
+.ocr-table td {
+    padding: 15px;
+    border-bottom: 1px solid #334155;
+    vertical-align: top; /* 上揃え */
+    color: #E2E8F0;
+}
+
+/* 画像列のデザイン */
+.ocr-table img {
+    width: 450px;       /* ★変更: 300px -> 450px に拡大 */
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #475569;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* OCRテキスト列のデザイン */
+.ocr-text-cell {
+    white-space: pre-wrap;       /* ★改行を反映 */
+    word-wrap: break-word;       /* 長い単語は折り返し */
+    line-height: 1.7;            /* 行間を広めに */
+    font-family: "Yu Gothic", sans-serif;
+    background-color: rgba(0,0,0,0.2); /* 少し暗くして読みやすく */
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* 枠全体 */
+details {
+    background-color: #1E293B !important;
+    border: 1px solid #334155 !important;
+    border-radius: 8px !important;
+    margin-bottom: 10px;
+}
+
+/* ヘッダー部分 (クリックする行) */
+summary {
+    background-color: #1E293B !important;
+    color: #E2E8F0 !important;
+    font-family: "Yu Gothic", "YuGothic", "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+}
+
+/* ホバー時の色 */
+summary:hover {
+    color: #38BDF8 !important; /* シアン */
+    background-color: #334155 !important;
+}
+
+/* 展開された中身のエリア */
+details > div {
+    background-color: #0F172A !important; /* さらに暗い色 (エディタ風) */
+    color: #E2E8F0 !important;
+    padding: 10px;
+    border-top: 1px solid #334155;
+}
+
+/* === 追加: 点滅テキストのアニメーション === */
+@keyframes pulse-opacity {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+.blinking-text {
+    animation: pulse-opacity 1.5s infinite ease-in-out;
+    color: #38BDF8; /* シアン */
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* === 追加: ヘッダーの背景色をボディと統一 === */
+header[data-testid="stHeader"] {
+    background-color: #0B1120 !important; /* ボディの基本色 (Deepest Navy) */
+}
+
+/* ヘッダー内のアイテム（ハンバーガーメニューなど）の色も調整 */
+header[data-testid="stHeader"] .st-emotion-cache-10trblm,
+header[data-testid="stHeader"] button {
+    color: #E2E8F0 !important; /* テキスト色を明るく */
+}
